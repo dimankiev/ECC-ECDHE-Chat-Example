@@ -2,7 +2,7 @@
 Example of the ephemeral form of ECDH exchange with forward secrecy
 # Features
  - [x] Re-usable core crypto module
- - [x] ECDH Exchange (+ Key derviation) with manual key rotation for ephemeric encryption
+ - [x] ECDH Exchange (+ Key derviation) with manual key rotation for ephemeral encryption
  - [x] AES Encryption/Decryption
  - [x] CLI UI
 # Future
