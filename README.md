@@ -1,5 +1,14 @@
 # ECC-ECDHE-Chat-Example
 Example of the ephemeral form of ECDH exchange with forward secrecy
+# Features
+ - [x] Re-usable core crypto module
+ - [x] ECDH Exchange (+ Key derviation) with manual key rotation for ephemeric encryption
+ - [x] AES Encryption/Decryption
+ - [x] CLI UI
+# Future
+ - [ ] (In progress) Session management
+ - [ ] (TODO) Semi-auto exchange using tunnels (peer-to-peer)
+ - [ ] (TODO) GUI
 # Prerequisites
 1. `pip install cryptography`
 2. `python main.py`
