@@ -12,7 +12,9 @@ def __init(instance: Crypto) -> str:
 
         print('Starting exchange!')
         print('Your public key (share it to peer):')
-        print(instance.session_export_public_key(session_id))
+        public_key_serialized = instance.session_export_public_key(session_id)
+        public_key_encoded = base64.b64encode(public_key_serialized).decode()
+        print(public_key_encoded)
         print('Paste peer public key:')
 
         __exchange(instance, session_id)

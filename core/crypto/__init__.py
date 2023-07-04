@@ -12,6 +12,7 @@ class Crypto:
 
     def __init__(self):
         pass
+        # TODO: implement session end
 
     def session_import_public_key(self, session_id: str, public_key: str) -> None:
         """
@@ -23,7 +24,7 @@ class Crypto:
         peer_pbk = load_pem_public_key(base64.b64decode(public_key.encode()), backend=default_backend())
         self.__session_exchange(session_id, peer_pbk)
 
-    def session_export_public_key(self, session_id: str) -> str | None:
+    def session_export_public_key(self, session_id: str) -> bytes | None:
         """
         Exports your public key for a session.
         :param session_id: The session ID.
@@ -32,8 +33,8 @@ class Crypto:
         if session is None:
             return
 
-        serialized = session[1].public_bytes(Encoding.PEM, PublicFormat.SubjectPublicKeyInfo)
-        return base64.b64encode(serialized).decode()
+        serialized: bytes = session[1].public_bytes(Encoding.PEM, PublicFormat.SubjectPublicKeyInfo)
+        return serialized
 
     def session_new(self, session_id: str = None) -> str:
         """
