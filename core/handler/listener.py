@@ -6,7 +6,7 @@ import base64
 from .dto import ExchangeDTO, TransmitDTO
 
 
-def init(crypto_instance: Crypto) -> None:
+def init(crypto_instance: Crypto) -> FastAPI:
     handler = Handler(crypto_instance)
 
     app = FastAPI()
@@ -28,3 +28,5 @@ def init(crypto_instance: Crypto) -> None:
     async def end(session_id: str):
         # TODO: implement session end
         pass
+
+    return app
